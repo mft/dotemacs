@@ -109,6 +109,9 @@
   (python-mode . lsp)
   :init
   (setq lsp-keymap-prefix "C-c l")
+  :config
+  ; ~/.local/bin は pipx でインストールしたコマンドのパス
+  (setq lsp-pyls-server-command (expand-file-name "~/.local/bin/pyls"))
   :commands lsp)
 
 ;;; python-mode (with pipenv.el)
@@ -144,17 +147,12 @@
 ;;; editorconfig-mode
 ;;; (editorconfig-mode 1)
 
-;; ;;; lsp-mode
-;; (require 'lsp-mode)
-;; (require 'lsp-python)
-;; (add-hook 'python-mode-hook #'lsp-mode)
-
 ;;; ropemacs
 ;; (defun load-ropemacs ()
 ;;   "Load pymacs and ropemacs"
 ;;   (interactive)
 ;;   (require 'pymacs)
-;;   (setq pymacs-python-command "/Users/matsui/Gentoo/usr/bin/python2.7")
+;;   (setq pymacs-python-command (expand-file-name "~/Gentoo/usr/bin/python2.7"))
 ;;   (pymacs-load "ropemacs" "rope-")
 ;;   ;; Automatically save project python buffers before refactorings
 ;;   (setq ropemacs-confirm-saving 'nil))
