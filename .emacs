@@ -104,10 +104,11 @@
   "\\.ya?ml$")
 
 ;;; lsp-mode (language server protocol)
-(setq lsp-keymap-prefix "C-c l")
 (use-package lsp-mode
   :hook
   (python-mode . lsp)
+  :init
+  (setq lsp-keymap-prefix "C-c l")
   :commands lsp)
 
 ;;; python-mode (with pipenv.el)
