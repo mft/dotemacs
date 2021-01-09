@@ -91,10 +91,11 @@
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; projectile
-(projectile-mode +1)
-(eval-after-load 'projectile-mode
-  (progn
-    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)))
+(use-package projectile
+  :config
+  (projectile-mode +1)
+  :bind-keymap
+  ("C-c p" . 'projectile-command-map))
 
 ;;;; packages
 ;;; yaml-mode
