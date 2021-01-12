@@ -145,7 +145,10 @@
   (setq uniquify-buffer-name-style 'post-forward-angle-brackets))
 
 ;;; editorconfig-mode
-;;; (editorconfig-mode 1)
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
 
 ;;; ropemacs
 ;; (defun load-ropemacs ()
