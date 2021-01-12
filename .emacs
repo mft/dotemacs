@@ -95,7 +95,7 @@
   :config
   (projectile-mode +1)
   :bind-keymap
-  ("C-c p" . 'projectile-command-map))
+  ("C-c p" . projectile-command-map))
 
 ;;;; packages
 ;;; yaml-mode
